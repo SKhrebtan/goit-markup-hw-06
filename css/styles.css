@@ -418,7 +418,7 @@ img {
   fill: currentColor;
 }
 
-/* Footer */
+/**------------------------ Footer------------------ */
 
 .footer .container {
   display: flex;
@@ -473,7 +473,7 @@ img {
   margin-bottom: 16px;
 }
 
-/* Container */
+/**--------------------------- Container----------------------- */
 h1,
 h2,
 h3 {
@@ -488,7 +488,7 @@ h3 {
   padding-right: 15px;
 }
 
-/* Portfolio Hero */
+/**--------------------- Portfolio Hero---------------------------- */
 
 .section-hero-portfolio {
   padding-top: 96px;
@@ -549,7 +549,7 @@ h3 {
   padding: 0;
 }
 
-/* Overlay Portfolio */
+/**-------------------- Overlay Portfolio-------------------------- */
 
 .list-portfolio .thumb {
   position: relative;
@@ -641,8 +641,6 @@ h3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-
   width: 408px;
   min-height: 576px;
   padding: 72px 24px 24px 24px;
@@ -650,7 +648,7 @@ h3 {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
+  transform: translate(-50%, -50%) scale(1);
   transition: transform var(--transition-duration)
     var(--transition-timing-function);
 }
@@ -674,7 +672,7 @@ h3 {
       var(--transition-timing-function),
     border var(--transition-duration) var(--transition-timing-function);
 }
-.icon-modal {
+.icon-close {
   fill: var(--secondary-color);
   transition: fill var(--transition-duration) var(--transition-timing-function);
 }
@@ -684,8 +682,8 @@ h3 {
   background-color: var(--active-color);
   border: none;
 }
-.button-modal:hover .icon-modal,
-.button-modal:focus .icon-modal {
+.button-modal:hover .icon-close,
+.button-modal:focus .icon-close {
   fill: var(--white-color);
 }
 
@@ -710,11 +708,11 @@ h3 {
 
 .modal-title {
   margin: 0;
+  margin-bottom: 4px;
   text-align: center;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  text-align: center;
   letter-spacing: 0.02em;
   color: var(--secondary-color);
 }
@@ -722,12 +720,31 @@ h3 {
 .modal-form-label {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-.modal-form-label:focus-within {
-  background-color: blue;
+.icon-modal {
+  fill: var(--secondary-color);
+  transition: fill var(--transition-duration) var(--transition-timing-function);
 }
+.modal-form-label:focus-within .icon-modal {
+  fill: var(--accent-color);
+}
+
+.modal-form-input {
+  height: 40px;
+  width: 100%;
+  padding: 8px 38px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  outline: transparent;
+  transition: border-color var(--transition-duration)
+    var(--transition-timing-function);
+}
+
+.modal-form-label:focus-within .modal-form-input {
+  border-color: var(--accent-color);
+}
+
 .form-textarea {
   height: 120px;
   resize: none;
@@ -735,6 +752,13 @@ h3 {
   border-radius: 4px;
   padding-top: 8px;
   padding-left: 16px;
+  outline: transparent;
+  transition: border-color var(--transition-duration)
+    var(--transition-timing-function);
+}
+
+.modal-form-label:focus-within .form-textarea {
+  border-color: var(--accent-color);
 }
 
 .form-textarea::placeholder {
@@ -742,14 +766,6 @@ h3 {
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
-}
-
-.modal-form-input {
-  height: 40px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
-  padding: 8px 38px;
-  width: 100%;
 }
 
 .form-field {
@@ -776,7 +792,7 @@ h3 {
 
 .modal-form-checkbox {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 24px;
 }
 
@@ -797,17 +813,7 @@ h3 {
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  border: 1px solid transparent;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 0.04em;
   color: var(--white-color);
-  cursor: pointer;
   transition: background-color var(--transition-duration)
     var(--transition-timing-function);
 }
@@ -845,13 +851,11 @@ h3 {
   color: var(--white-color);
 }
 
-.form-subscribe-input::-webkit-input-placeholder {
+.form-subscribe-input::placeholder {
   font-size: 12px;
   line-height: 2;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: var(--white-color);
 }
 
 .subscribe-btn {
