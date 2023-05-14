@@ -792,7 +792,7 @@ h3 {
 
 .modal-form-checkbox {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 24px;
 }
 
@@ -802,6 +802,38 @@ h3 {
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--border-icon-color);
+}
+
+.checkbox-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox-icon {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    border-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.checkbox-hidden:focus ~ .checkbox-icon {
+  background-color: var(--active-color);
+  background-image: url('../images/checked.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: border-box;
+  border-color: transparent;
 }
 
 .send-btn {
