@@ -774,20 +774,20 @@ h3 {
 
 .icon-man {
   position: absolute;
-  top: 14px;
-  left: 19px;
+  top: 11px;
+  left: 16px;
 }
 
 .icon-tel {
   position: absolute;
-  top: 13px;
-  left: 19px;
+  top: 8px;
+  left: 16px;
 }
 
 .icon-email {
   position: absolute;
-  top: 14px;
-  left: 17.5px;
+  top: 8px;
+  left: 16px;
 }
 
 .modal-form-checkbox {
@@ -827,7 +827,7 @@ h3 {
     border-color var(--transition-duration) var(--transition-timing-function);
 }
 
-.checkbox-hidden:focus ~ .checkbox-icon {
+.checkbox-hidden:checked ~ .checkbox-icon {
   background-color: var(--active-color);
   background-image: url('../images/checked.svg');
   background-repeat: no-repeat;
@@ -892,7 +892,6 @@ h3 {
 
 .subscribe-btn {
   display: flex;
-  align-self: flex-end;
   align-items: center;
   padding: 8px 24px;
   margin-left: 24px;
