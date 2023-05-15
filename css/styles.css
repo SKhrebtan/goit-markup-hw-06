@@ -825,13 +825,13 @@ h3 {
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
-  /* outline: 1px solid transparent; */
+  outline: 1px solid transparent;
   outline-offset: 2px;
   transition: background-color var(--transition-duration)
       var(--transition-timing-function),
     border-color var(--transition-duration) var(--transition-timing-function);
-  /* outline-color var(--transition-duration) 
-    var(--transition-timing-function); */
+  /* outline-color var(--transition-duration)
+     var(--transition-timing-function); */
 }
 
 /* .checkbox-hidden:focus ~ .checkbox-icon {
@@ -850,11 +850,12 @@ h3 {
 
 .checkbox-hidden:checked ~ .checkbox-icon {
   background-color: var(--active-color);
-  /* background-image: url('../images/checked.svg'); */
+  border-color: transparent;
+  /* outline-color: var(--white-color); */
+  /* background-image: url('../images/checked.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-origin: border-box;
-  border-color: transparent;
+  background-origin: border-box; */
 }
 
 .policy-link {
